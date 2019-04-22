@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1o-ER-AsT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Wr-AT-8fC">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Guest Registration-->
         <scene sceneID="P2M-7O-1hc">
             <objects>
-                <tableViewController id="Q1o-ER-AsT" sceneMemberID="viewController">
+                <tableViewController id="Q1o-ER-AsT" customClass="AddRegistrationTableViewController" customModule="Hotel_Manzana" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="iDi-qJ-K5A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,11 +128,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UaM-nJ-kUN">
+                                                <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UaM-nJ-kUN">
                                                     <rect key="frame" x="20" y="11" width="374" height="178"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="577307241.94400096">
                                                         <!--2019-04-18 19:07:21 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="datePickerValueChanged" destination="Q1o-ER-AsT" eventType="valueChanged" id="dfN-Dy-Hmv"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -181,11 +184,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kCZ-9K-ct1">
+                                                <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kCZ-9K-ct1">
                                                     <rect key="frame" x="20" y="11" width="374" height="178"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="577307241.94400096">
                                                         <!--2019-04-18 19:07:21 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="datePickerValueChanged" destination="Q1o-ER-AsT" eventType="valueChanged" id="a0B-kL-PMB"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -208,16 +214,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Adults" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxx-Ey-wqw">
-                                                    <rect key="frame" x="20" y="11" width="48.5" height="22"/>
+                                                    <rect key="frame" x="8" y="8" width="48.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-Se-eOx">
-                                                    <rect key="frame" x="300" y="7.5" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-Se-eOx">
+                                                    <rect key="frame" x="312" y="7.5" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stepperValueChanged" destination="Q1o-ER-AsT" eventType="valueChanged" id="ehz-FC-rn9"/>
+                                                    </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-8a-I3S">
-                                                    <rect key="frame" x="272" y="11" width="8" height="22"/>
+                                                    <rect key="frame" x="284" y="8" width="8" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -244,16 +253,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2u-jE-mpY">
-                                                    <rect key="frame" x="20" y="11" width="64" height="22"/>
+                                                    <rect key="frame" x="8" y="8" width="64" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-eJ-bxF">
-                                                    <rect key="frame" x="300" y="7.5" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-eJ-bxF">
+                                                    <rect key="frame" x="312" y="7.5" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stepperValueChanged" destination="Q1o-ER-AsT" eventType="valueChanged" id="Wg7-bb-J9b"/>
+                                                    </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbu-C4-uQ9">
-                                                    <rect key="frame" x="269" y="11" width="11" height="22"/>
+                                                    <rect key="frame" x="281" y="8" width="11" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -283,8 +295,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Wi-Fi (per day)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rA9-gn-A4C">
-                                                    <rect key="frame" x="8" y="8" width="115" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Wi-Fi ($10 per day)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rA9-gn-A4C">
+                                                    <rect key="frame" x="8" y="8" width="147.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -311,7 +323,7 @@
                                         <rect key="frame" x="0.0" y="1046.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TpN-Qy-voi" id="i50-Uz-U1T">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sm-iL-rhS">
@@ -346,10 +358,50 @@
                             <outlet property="delegate" destination="Q1o-ER-AsT" id="5Zl-PF-Tmv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Guest Registration" id="pqM-Iv-NoU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GNz-0a-zP6">
+                            <connections>
+                                <action selector="saveButtonTapped" destination="Q1o-ER-AsT" id="afj-Us-AFV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkInDateLabel" destination="hsl-A5-00e" id="eXe-H1-CDH"/>
+                        <outlet property="checkInDatePicker" destination="UaM-nJ-kUN" id="6ZZ-VI-qIL"/>
+                        <outlet property="checkOutDateLabel" destination="aHx-Ut-7EV" id="rdx-EN-aDg"/>
+                        <outlet property="checkOutDatePicker" destination="kCZ-9K-ct1" id="KPu-PJ-obF"/>
+                        <outlet property="emailField" destination="Zpk-Gx-G8N" id="FX8-9O-Dgh"/>
+                        <outlet property="firstNameField" destination="7fn-qS-avf" id="6Uc-hc-LiX"/>
+                        <outlet property="lastNameField" destination="6iZ-tf-PmF" id="fNs-pN-apA"/>
+                        <outlet property="numberOfAdultsLabel" destination="zKw-8a-I3S" id="azi-Xb-YSK"/>
+                        <outlet property="numberOfAdultsStepper" destination="FN5-Se-eOx" id="qve-8M-QcL"/>
+                        <outlet property="numberOfChildrenLabel" destination="dbu-C4-uQ9" id="t5B-lG-8sS"/>
+                        <outlet property="numberOfChildrenStepper" destination="GvK-eJ-bxF" id="L0D-DJ-3Gb"/>
+                        <outlet property="saveButton" destination="GNz-0a-zP6" id="eKv-Ea-bQf"/>
+                        <outlet property="wifiSwitch" destination="cGJ-Xv-LBe" id="W4U-x6-1zY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aF-gb-EfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="91"/>
+            <point key="canvasLocation" x="1097.1014492753625" y="90.401785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gcz-gw-rNU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Wr-AT-8fC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="O48-ni-eWn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q1o-ER-AsT" kind="relationship" relationship="rootViewController" id="5g8-qW-w3X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7p-yA-K65" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186.95652173913044" y="90.401785714285708"/>
         </scene>
     </scenes>
 </document>
